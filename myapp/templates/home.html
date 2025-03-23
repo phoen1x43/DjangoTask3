@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Greeting Dashboard</title>
+    <style>
+        body {
+            background-color: #eef4fc;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            text-align: center;
+        }
+        .header {
+            background-color: #4caf4f;
+            color: white;
+            padding: 15px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .content {
+            margin-top: 20px;
+            text-align: left;
+        }
+        a {
+            display: block;
+            margin-top: 8px;
+            color: rgb(0, 4, 255);
+            text-decoration: none;
+            text-align: left;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">Home Page</div>
+    <div class="content">
+        <p><strong>Total greetings:</strong> {{ total }}</p>
+
+        <h3>Users:</h3>
+        {% for user in users %}
+            <a href="{% url 'stats_name' name=user %}">{{ user }}</a>
+        {% empty %}
+            <p>No greetings yet.</p>
+        {% endfor %}
+
+        <hr>
+        <a href="{% url 'name_form' %}">Go to form</a>
+    </div>
+</body>
+</html>
+
+
+
+

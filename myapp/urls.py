@@ -1,8 +1,8 @@
 from django.urls import path
-from .views import hello, stats, stats_name
+from . import views
 
 urlpatterns = [
-    path('hello/<str:name>/', hello, name='hello'),
-    path('stats/', stats, name='stats'),
-    path('stats/<str:name>/', stats_name, name='stats_name'),
+    path('', views.home, name='home'),
+    path('form/', views.name_form, name='name_form'),
+    path('stats/<str:name>/', views.stats_name, name='stats_name'),
 ]

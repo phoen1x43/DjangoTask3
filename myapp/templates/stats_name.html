@@ -16,7 +16,7 @@
             padding: 15px;
             font-size: 24px;
             font-weight: bold;
-            text-align: center
+            text-align: center;
         }
         .content {
             margin-top: 20px;
@@ -40,6 +40,7 @@
             margin-top: 10px;
             color: rgb(0, 119, 255);
             text-decoration: none;
+            text-align: left;
         }
         a:hover {
             text-decoration: underline;
@@ -57,7 +58,6 @@
                 <p>No greetings found for {{ name }}.</p>
             {% endfor %}
         </div>
-        <a href="{% url 'stats' %}">Go to general stats</a>
         <a href="/">Go back to home page</a>
     </div>
 </body>
